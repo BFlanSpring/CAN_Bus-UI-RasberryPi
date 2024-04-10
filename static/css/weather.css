@@ -1,0 +1,149 @@
+*, *::after, *::before {
+    box-sizing: border-box;    
+}
+
+body{
+    background: #0c0117;
+    height:200%;
+    margin: 0;
+    color: hsl(200, 100%, 10%);
+    font-family: sans-serif;
+
+
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+
+}
+
+.header-left{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem;
+    border-right: 3px solid hsl(200, 57%, 63%);
+}
+
+.weather-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    fill:red;
+}
+.weather-icon-large {
+    width: 150px;
+    height: 150px;
+
+}
+.header-current-temp {
+    font-size: 5rem;
+    margin-left:1rem;
+}
+
+.header-right {
+    display: grid;
+    width: 50%;
+    justify-content: space-around;
+    gap: 2rem;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(2, auto);
+    
+}
+
+.info-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.label {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: hsl(207, 98%, 57%);
+    text-align: center;
+
+
+}
+
+.value-sub-info {
+    font-weight: lighter;
+    font-size: 1rem;
+}
+
+#hourly-data {
+    width: 100%; 
+    table-layout: auto; 
+    text-align: center;
+    border-spacing: 0;
+}
+
+.hour-row {
+    background-color: hsl(206, 100%, 12%);
+}
+
+.hour-row:nth-child(2n) {
+    background-color: hsl(207, 100%, 17%);
+}
+
+.hour-row img {
+    width: 70px; 
+    height: 70px; 
+}
+
+.hour-row td {
+    width: auto;
+}
+
+.font-color{
+    color:rgb(170, 170, 170);
+}
+
+#current-time{
+    padding-top: 2rem;
+    font-size: 3rem;
+}
+
+.weather-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #363636;
+    border-radius: 4px;
+    color: #000; 
+    font-size: 14px; 
+}
+
+input[type="text"]::placeholder {
+    color: #001653; 
+    opacity: 1; 
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom:10rem;
+    background-color: #007bff;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
