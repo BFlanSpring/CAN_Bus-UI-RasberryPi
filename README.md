@@ -44,9 +44,7 @@ Aftermarket car tuning has been evolving at an exponential rate as technology an
     flask run
     ```
 
-## Testing
-
-To run test, run:
+6. **Testing** To run test, run:
     ```
     python3 -m unittest discover tests
     ```
