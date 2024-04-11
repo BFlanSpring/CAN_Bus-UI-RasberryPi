@@ -1,11 +1,11 @@
 import unittest
-from app import create_app, db, connect_db, User
+from app import app, db, connect_db, User
 
 class TestModels(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.app = create_app('testing')
+        cls.app = app
         cls.client = cls.app.test_client()
         with cls.app.app_context():
             connect_db(cls.app)
@@ -15,13 +15,6 @@ class TestModels(unittest.TestCase):
         with cls.app.app_context():
             db.session.remove()
             db.drop_all()
-
-    def setUp(self):
-        # Create some sample data for testing
-        with self.app.app_context():
-            user = User.register('test_user', 'password', 'test@example.com', 'Test', 'User')
-            db.session.add(user)
-            db.session.commit()
 
     def tearDown(self):
         with self.app.app_context():
@@ -39,6 +32,9 @@ class TestModels(unittest.TestCase):
     def test_authenticate_method(self):
         with self.app.app_context():
             # Test authentication with correct credentials
+            user = User.register('test_user', 'password', 'test@example.com', 'Test', 'User')
+            db.session.add(user)
+            db.session.commit()
             authenticated_user = User.authenticate('test_user', 'password')
             self.assertIsInstance(authenticated_user, User)
             self.assertEqual(authenticated_user.username, 'test_user')
